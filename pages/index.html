@@ -8,5 +8,30 @@
 		<link rel="stylesheet" href="../styles/style.css" />
 		<script src="../scripts/translator.js" defer></script>
 	</head>
-	<body></body>
+	<body>
+		<section class="morse">
+			<textarea
+				class="morse__input"
+				name="english"
+				id="english"
+				cols="30"
+				rows="10"
+				placeholder="English..."
+			></textarea>
+			<button class="btn morse__btn" onclick="translate_english()">
+				Translate to Morse
+			</button>
+			<textarea
+				class="morse__input"
+				name="morse"
+				id="morse"
+				cols="30"
+				rows="10"
+				placeholder="Morse Code..."
+			></textarea>
+			<button class="btn morse__btn" onclick="translate_morse()">
+				Translate to English
+			</button>
+		</section>
+	</body>
 </html>

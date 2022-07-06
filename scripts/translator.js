@@ -20,6 +20,7 @@ MORSE_DICTIONARY = {
 	S: "...",
 	T: "-",
 	U: "..-",
+	V: "...-",
 	W: ".--",
 	X: "-..-",
 	Y: "-.--",
@@ -28,7 +29,7 @@ MORSE_DICTIONARY = {
 };
 
 // translate a line of english text to morse code.
-function translate_english_to_morse(text) {
+function english_to_morse(text) {
 	let output = "";
 	Array.from(text.toUpperCase()).forEach((char) => {
 		if (char in MORSE_DICTIONARY) {
@@ -48,7 +49,7 @@ function getKeyByValue(object, value) {
 }
 
 // translate a line of morse code to english text.
-function translate_morse_to_english(line) {
+function morse_to_english(line) {
 	let output = "";
 
 	// split the line into words on each space '   '.
@@ -66,4 +67,16 @@ function translate_morse_to_english(line) {
 
 	// return the output removing the trailing space.
 	return output; //.substring(0, output.length - 1);
+}
+
+// translate the text in the english box to morse code.
+function translate_english() {
+	let line = document.getElementById("english").value;
+	document.getElementById("morse").value = english_to_morse(line);
+}
+
+// translate the text in the morse code box to english.
+function translate_morse() {
+	let line = document.getElementById("morse").value;
+	document.getElementById("english").value = morse_to_english(line);
 }
