@@ -1,17 +1,56 @@
-morse {
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	height: 100vh;
+
+	background-color: #e0e0e0;
+}
+
+.morse {
 	display: flex;
 	flex-direction: column;
-
 	justify-content: center;
 
-	font-family: Arial, Helvetica, sans-serif;
+	width: 400px;
+	padding: 20px;
+
+	border-radius: 50px;
+	background: #e0e0e0;
+	box-shadow: 6px 6px 12px #bebebe, -6px -6px 12px #ffffff;
+
+	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 
 	&__input {
+		margin: 20px;
+		border: none;
+		padding: 10px;
+
+		border-radius: 10px;
+		background: #e0e0e0;
+		box-shadow: inset 6px 6px 12px #bebebe, inset -6px -6px 12px #ffffff;
+
+		font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+
+		&--morse {
+			font-family: "Courier", Courier, monospace;
+		}
 	}
 
 	&__btn {
+		margin: 20px;
+		border: none;
+		padding: 10px;
+
+		border-radius: 10px;
+		background: #e0e0e0;
+		box-shadow: 6px 6px 12px #bebebe, -6px -6px 12px #ffffff;
+
+		&:active {
+		}
 	}
 }
 
-btn {
+.btn {
 }
