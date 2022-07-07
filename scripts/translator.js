@@ -70,7 +70,7 @@ function morse_to_english(line) {
 	}
 
 	// return the output removing the trailing space.
-	return output; //.substring(0, output.length - 1);
+	return output.substring(0, output.length - 1);
 }
 
 // translate the text in the english box to morse code.
