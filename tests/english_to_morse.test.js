@@ -1,6 +1,7 @@
 const english_to_morse = require("./../scripts/translator").english_to_morse;
 
 // tested using values from: https://morsecode.world/international/translator.html
+// omitting special characters since it's not a requirement of the mvp.
 morse_table = {
 	a: ".-",
 	b: "-...",

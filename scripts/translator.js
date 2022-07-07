@@ -1,5 +1,3 @@
-//TODO: replace '.' with '•'.
-
 MORSE_DICTIONARY = {
 	A: ".-",
 	B: "-...",
@@ -87,4 +85,3 @@ function translate_morse() {
 
 exports.english_to_morse = english_to_morse;
 exports.morse_to_english = morse_to_english;
-/* module.exports = english_to_morse; */
