@@ -1,30 +1,32 @@
+//TODO: replace '.' with '•'.
+
 MORSE_DICTIONARY = {
-	A: "•-",
-	B: "-•••",
-	C: "-•-•",
-	D: "-••",
-	E: "•",
-	F: "••-•",
-	G: "--•",
-	H: "••••",
-	I: "••",
-	J: "•---",
-	K: "-•-",
-	L: "•-••",
+	A: ".-",
+	B: "-...",
+	C: "-.-.",
+	D: "-..",
+	E: ".",
+	F: "..-.",
+	G: "--.",
+	H: "....",
+	I: "..",
+	J: ".---",
+	K: "-.-",
+	L: ".-..",
 	M: "--",
-	N: "-•",
+	N: "-.",
 	O: "---",
-	P: "•--•",
-	Q: "--•-",
-	R: "•-•",
-	S: "•••",
+	P: ".--.",
+	Q: "--.-",
+	R: ".-.",
+	S: "...",
 	T: "-",
-	U: "••-",
-	V: "•••-",
-	W: "•--",
-	X: "-••-",
-	Y: "-•--",
-	Z: "--••",
+	U: "..-",
+	V: "...-",
+	W: ".--",
+	X: "-..-",
+	Y: "-.--",
+	Z: "--..",
 	" ": " ",
 };
 
@@ -32,6 +34,7 @@ MORSE_DICTIONARY = {
 function english_to_morse(text) {
 	let output = "";
 	Array.from(text.toUpperCase()).forEach((char) => {
+		// substitute the character.
 		if (char in MORSE_DICTIONARY) {
 			output += MORSE_DICTIONARY[char] + " ";
 		}
@@ -80,3 +83,7 @@ function translate_morse() {
 	let line = document.getElementById("morse").value;
 	document.getElementById("english").value = morse_to_english(line);
 }
+
+exports.english_to_morse = english_to_morse;
+exports.morse_to_english = morse_to_english;
+/* module.exports = english_to_morse; */
