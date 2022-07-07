@@ -33,12 +33,13 @@ MORSE_DICTIONARY = {
 // translate a line of english text to morse code.
 function english_to_morse(text) {
 	let output = "";
-	Array.from(text.toUpperCase()).forEach((char) => {
+	/* Array.from(text.toUpperCase()).forEach((char) =>  */
+	for (let char of text.toUpperCase()) {
 		// substitute the character.
 		if (char in MORSE_DICTIONARY) {
 			output += MORSE_DICTIONARY[char] + " ";
 		}
-	});
+	}
 	return output.substring(0, output.length - 1);
 }
 
@@ -57,16 +58,16 @@ function morse_to_english(line) {
 
 	// split the line into words on each space '   '.
 	words = line.split("   ");
-	words.forEach((word) => {
+	for (word of words) {
 		// split each word into letters.
 		letters = word.split(" ");
-		letters.forEach((letter) => {
+		for (letter of letters) {
 			output += getKeyByValue(MORSE_DICTIONARY, letter) || "";
-		});
+		}
 
 		// add the space back in.
 		output += " ";
-	});
+	}
 
 	// return the output removing the trailing space.
 	return output; //.substring(0, output.length - 1);

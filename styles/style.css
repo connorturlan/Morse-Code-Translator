@@ -37,3 +37,6 @@ body {
   background: #e0e0e0;
   box-shadow: 6px 6px 12px #bebebe, -6px -6px 12px #ffffff;
 }
+.morse__btn:active {
+  box-shadow: 3px 3px 6px #bebebe, -3px -3px 6px #ffffff;
+}
