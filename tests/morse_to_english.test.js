@@ -58,7 +58,7 @@ test("reverse translating A-Z lowercase", () => {
 // test sentences.
 test("reverse translating 'Hello, World!'", () => {
 	expect(
-		morse_to_english(".... . .-.. .-.. ---   .-- --- .-. .-.. -..")
+		morse_to_english(".... . .-.. .-.. --- / .-- --- .-. .-.. -..")
 	).toBe("Hello World".toUpperCase());
 });
 
@@ -66,7 +66,7 @@ test("reverse translating 'Hello, World!'", () => {
 test("reverse translating 'The quick brown fox jumps over a lazy dog'", () => {
 	expect(
 		morse_to_english(
-			"- .... .   --.- ..- .. -.-. -.-   -... .-. --- .-- -.   ..-. --- -..-   .--- ..- -- .--. ...   --- ...- . .-.   .-   .-.. .- --.. -.--   -.. --- --."
+			"- .... . / --.- ..- .. -.-. -.- / -... .-. --- .-- -. / ..-. --- -..- / .--- ..- -- .--. ... / --- ...- . .-. / .- / .-.. .- --.. -.-- / -.. --- --."
 		)
 	).toBe("The quick brown fox jumps over a lazy dog".toUpperCase());
 });

@@ -55,25 +55,25 @@ test("translating special characters", () => {
 // test sentences.
 test("translating 'Hello, World!'", () => {
 	expect(english_to_morse("Hello, World!")).toBe(
-		".... . .-.. .-.. ---   .-- --- .-. .-.. -.."
+		".... . .-.. .-.. --- / .-- --- .-. .-.. -.."
 	);
 });
 
 // test pangrams.
 test("translating 'The quick brown fox jumps over a lazy dog'", () => {
 	expect(english_to_morse("The quick brown fox jumps over a lazy dog")).toBe(
-		"- .... .   --.- ..- .. -.-. -.-   -... .-. --- .-- -.   ..-. --- -..-   .--- ..- -- .--. ...   --- ...- . .-.   .-   .-.. .- --.. -.--   -.. --- --."
+		"- .... . / --.- ..- .. -.-. -.- / -... .-. --- .-- -. / ..-. --- -..- / .--- ..- -- .--. ... / --- ...- . .-. / .- / .-.. .- --.. -.-- / -.. --- --."
 	);
 });
 
 test("translating 'Hello, World!'", () => {
 	expect(english_to_morse("Hello, World!")).toBe(
-		".... . .-.. .-.. ---   .-- --- .-. .-.. -.."
+		".... . .-.. .-.. --- / .-- --- .-. .-.. -.."
 	);
 });
 
 test("translating 'Hello, World!'", () => {
 	expect(english_to_morse("Hello, World!")).toBe(
-		".... . .-.. .-.. ---   .-- --- .-. .-.. -.."
+		".... . .-.. .-.. --- / .-- --- .-. .-.. -.."
 	);
 });

@@ -1,3 +1,4 @@
+// a dictionary to store all translations from english to morse. Alphabet and Spaces only.
 const MORSE_DICTIONARY = {
 	A: ".-",
 	B: "-...",
@@ -28,6 +29,7 @@ const MORSE_DICTIONARY = {
 	" ": "/",
 };
 
+// reverse the morse dictionary k/v pairs to generate an english dictionary.
 const ENG_DICTIONARY = Object.entries(MORSE_DICTIONARY).reduce(
 	(obj, [key, value]) => {
 		obj[value] = key;
