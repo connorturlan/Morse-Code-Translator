@@ -33,7 +33,7 @@ body {
   border-radius: 10px;
   background: #e0e0e0;
   box-shadow: inset 6px 6px 12px #bebebe, inset -6px -6px 12px #ffffff;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Courier New", Courier, monospace;
 }
 .morse__input--morse {
   font-family: "Courier", Courier, monospace;

@@ -38,24 +38,11 @@ const ENG_DICTIONARY = Object.entries(MORSE_DICTIONARY).reduce(
 
 // translate a line of english text to morse code.
 function english_to_morse(text) {
-	let output = "";
-	/* Array.from(text.toUpperCase()).forEach((char) =>  */
-	for (let char of text.toUpperCase()) {
-		// substitute the character.
-		if (char in MORSE_DICTIONARY) {
-			output += MORSE_DICTIONARY[char] + " ";
-		}
-	}
-	return output.substring(0, output.length - 1);
-}
-
-/*
-	find a key by value within the dictionary.
-
-	code sourced from https://stackoverflow.com/a/28191966
-*/
-function getKeyByValue(object, value) {
-	return Object.keys(object).find((key) => object[key] === value);
+	return text
+		.toUpperCase()
+		.split("")
+		.map((char) => MORSE_DICTIONARY[char] || "")
+		.join(" ");
 }
 
 // translate a line of morse code to english text.
@@ -63,7 +50,7 @@ function morse_to_english(line) {
 	let output = "";
 
 	// split the line into words on each space '   '.
-	words = line.split("   ");
+	words = line.split("/");
 	for (word of words) {
 		// split each word into letters.
 		letters = word.split(" ");
