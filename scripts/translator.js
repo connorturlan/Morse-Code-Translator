@@ -1,4 +1,4 @@
-MORSE_DICTIONARY = {
+const MORSE_DICTIONARY = {
 	A: ".-",
 	B: "-...",
 	C: "-.-.",
@@ -25,8 +25,16 @@ MORSE_DICTIONARY = {
 	X: "-..-",
 	Y: "-.--",
 	Z: "--..",
-	" ": " ",
+	" ": "/",
 };
+
+const ENG_DICTIONARY = Object.entries(MORSE_DICTIONARY).reduce(
+	(obj, [key, value]) => {
+		obj[value] = key;
+		return obj;
+	},
+	{}
+);
 
 // translate a line of english text to morse code.
 function english_to_morse(text) {
@@ -60,7 +68,7 @@ function morse_to_english(line) {
 		// split each word into letters.
 		letters = word.split(" ");
 		for (letter of letters) {
-			output += getKeyByValue(MORSE_DICTIONARY, letter) || "";
+			output += ENG_DICTIONARY[letter] || "";
 		}
 
 		// add the space back in.
