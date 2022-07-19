@@ -47,23 +47,15 @@ function english_to_morse(text) {
 
 // translate a line of morse code to english text.
 function morse_to_english(line) {
-	let output = "";
-
-	// split the line into words on each space '   '.
-	words = line.split("/");
-	for (word of words) {
-		// split each word into letters.
-		letters = word.split(" ");
-		for (letter of letters) {
-			output += ENG_DICTIONARY[letter] || "";
-		}
-
-		// add the space back in.
-		output += " ";
-	}
-
-	// return the output removing the trailing space.
-	return output.substring(0, output.length - 1);
+	return line
+		.split("/")
+		.map((word) =>
+			word
+				.split(" ")
+				.map((letter) => ENG_DICTIONARY[letter] || "")
+				.join("")
+		)
+		.join(" ");
 }
 
 // translate the text in the english box to morse code.
