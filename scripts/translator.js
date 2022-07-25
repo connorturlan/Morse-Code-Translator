@@ -43,6 +43,7 @@ function english_to_morse(text) {
 	return text
 		.toUpperCase()
 		.split("")
+		.filter((char) => char in MORSE_DICTIONARY)
 		.map((char) => MORSE_DICTIONARY[char] || "")
 		.join(" ");
 }
@@ -54,6 +55,7 @@ function morse_to_english(line) {
 		.map((word) =>
 			word
 				.split(" ")
+				.filter((letter) => letter in ENG_DICTIONARY)
 				.map((letter) => ENG_DICTIONARY[letter] || "")
 				.join("")
 		)
