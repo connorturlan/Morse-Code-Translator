@@ -1,9 +1,8 @@
+/* import { morse_to_english } from "../scripts/translator"; */
 const { morse_to_english } = require("../scripts/translator");
 
-const english_to_morse = require("../scripts/translator").morse_to_english;
-
 // tested using values from: https://morsecode.world/international/translator.html
-morse_table = {
+const morse_table = {
 	a: ".-",
 	b: "-...",
 	c: "-.-.",
@@ -36,37 +35,41 @@ function getMorse(c) {
 	return morse_table[c.toLowerCase()];
 }
 
-alphabet = "abcdefghijklmnopqrstuvwxyz";
+const alphabet = "abcdefghijklmnopqrstuvwxyz";
 
 // per-character tests.
-test("reverse translating A-Z uppercase", () => {
-	Array.from(alphabet.toUpperCase()).forEach((c) => {
-		expect(morse_to_english(getMorse(c.toUpperCase()))).toBe(
-			c.toUpperCase()
-		);
+describe("per character tests", () => {
+	test("reverse translating A-Z uppercase", () => {
+		Array.from(alphabet.toUpperCase()).forEach((c) => {
+			expect(morse_to_english(getMorse(c.toUpperCase()))).toBe(
+				c.toUpperCase()
+			);
+		});
+	});
+
+	test("reverse translating A-Z lowercase", () => {
+		Array.from(alphabet.toLowerCase()).forEach((c) => {
+			expect(morse_to_english(getMorse(c.toLowerCase()))).toBe(
+				c.toUpperCase()
+			);
+		});
 	});
 });
 
-test("reverse translating A-Z lowercase", () => {
-	Array.from(alphabet.toLowerCase()).forEach((c) => {
-		expect(morse_to_english(getMorse(c.toLowerCase()))).toBe(
-			c.toUpperCase()
-		);
+describe("full sentence tests", () => {
+	// test sentences.
+	test("reverse translating 'Hello, World!'", () => {
+		expect(
+			morse_to_english(".... . .-.. .-.. --- / .-- --- .-. .-.. -..")
+		).toBe("Hello World".toUpperCase());
 	});
-});
 
-// test sentences.
-test("reverse translating 'Hello, World!'", () => {
-	expect(
-		morse_to_english(".... . .-.. .-.. --- / .-- --- .-. .-.. -..")
-	).toBe("Hello World".toUpperCase());
-});
-
-// test pangrams.
-test("reverse translating 'The quick brown fox jumps over a lazy dog'", () => {
-	expect(
-		morse_to_english(
-			"- .... . / --.- ..- .. -.-. -.- / -... .-. --- .-- -. / ..-. --- -..- / .--- ..- -- .--. ... / --- ...- . .-. / .- / .-.. .- --.. -.-- / -.. --- --."
-		)
-	).toBe("The quick brown fox jumps over a lazy dog".toUpperCase());
+	// test pangrams.
+	test("reverse translating 'The quick brown fox jumps over a lazy dog'", () => {
+		expect(
+			morse_to_english(
+				"- .... . / --.- ..- .. -.-. -.- / -... .-. --- .-- -. / ..-. --- -..- / .--- ..- -- .--. ... / --- ...- . .-. / .- / .-.. .- --.. -.-- / -.. --- --."
+			)
+		).toBe("The quick brown fox jumps over a lazy dog".toUpperCase());
+	});
 });
